@@ -7,7 +7,7 @@
 ## Identitas Mahasiswa
 - **Nama Mahasiswa** : Fredrick Laurensius Aritonang
 - **NIM** : 12S24001
-- **Program Studi** : S1 Sistem Informasi / Informatika
+- **Program Studi** : S1 Sistem Informasi
 - **Dosen Pengampu** : Chandro Pardede, S.Kom., M.Sc.
 - **Waktu Ujian** : Kamis, 29 Oktober 2026
 
