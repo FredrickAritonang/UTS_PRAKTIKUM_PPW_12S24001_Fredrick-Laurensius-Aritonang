@@ -81,7 +81,7 @@
         </div>
 
         <div class="pagination-wrapper">
-            {{ $loans->links('pagination::bootstrap-4') }}
+            {{ $loans->links('pagination.custom') }}
         </div>
     @else
         <div class="empty-state">

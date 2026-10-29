@@ -9,9 +9,7 @@ use Illuminate\Support\Str;
 
 class EquipmentController extends Controller
 {
-    /**
-     * Display a paginated listing of equipments with search and filters.
-     */
+
     public function index(Request $request)
     {
         $query = Equipment::with('category');
@@ -20,7 +18,8 @@ class EquipmentController extends Controller
             $search = trim($request->input('search'));
             $query->where(function ($q) use ($search) {
                 $q->where('name', 'like', "%{$search}%")
-                  ->orWhere('asset_code', 'like', "%{$search}%");
+                  ->orWhere('asset_code', 'like', "%{$search}%")
+                  ->orWhere('specification', 'like', "%{$search}%");
             });
         }
 
@@ -32,7 +31,7 @@ class EquipmentController extends Controller
             $query->where('status', $request->input('status'));
         }
 
-        // Order by ID ascending so earlier seeded items come in predictable order
+        
         $equipments = $query->orderBy('id', 'asc')
             ->paginate(6)
             ->appends($request->query());
@@ -42,18 +41,14 @@ class EquipmentController extends Controller
         return view('equipments.index', compact('equipments', 'categories'));
     }
 
-    /**
-     * Show the form for creating a new equipment.
-     */
+    
     public function create()
     {
         $categories = Category::orderBy('name')->get();
         return view('equipments.create', compact('categories'));
     }
 
-    /**
-     * Store a newly created equipment in storage.
-     */
+    
     public function store(Request $request)
     {
         $rules = [

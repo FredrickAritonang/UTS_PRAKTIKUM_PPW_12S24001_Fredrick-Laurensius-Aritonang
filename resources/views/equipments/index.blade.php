@@ -132,7 +132,7 @@
 
         <!-- Tautan Paginasi Eloquent Berparameter Query String -->
         <div class="pagination-wrapper">
-            {{ $equipments->links('pagination::bootstrap-4') }}
+            {{ $equipments->links('pagination.custom') }}
         </div>
     @else
         <div class="empty-state">

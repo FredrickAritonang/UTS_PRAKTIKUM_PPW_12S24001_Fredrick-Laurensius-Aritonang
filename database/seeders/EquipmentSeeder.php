@@ -62,7 +62,7 @@ class EquipmentSeeder extends Seeder
                 'category_id' => 3,
                 'asset_code' => 'EQ-DRN-001',
                 'name' => 'DJI Mavic Air 2 Fly More Combo',
-                'specification' => 'Kamera 48MP 1/2-inch CMOS, Video 4K 60fps HDR, 34 Menit Waktu Terbang per Baterai, 3x Intelligent Flight Batteries, Tas Bahu & Filter ND',
+                'specification' => 'Unit Drone Quadcopter Profesional dengan Kamera 48MP 1/2-inch CMOS, Video 4K 60fps HDR, 34 Menit Waktu Terbang per Baterai, 3x Intelligent Flight Batteries, Tas Bahu & Filter ND',
                 'condition' => 'baik',
                 'status' => 'tersedia',
                 'daily_rental_fee' => 50000,
