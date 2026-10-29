@@ -3,25 +3,25 @@
 @section('title', 'Katalog Aset Laboratorium')
 
 @section('content')
-<!-- Section Semantik HTML5 untuk Katalog -->
+
 <section class="catalog-section">
     <div class="section-header">
         <div>
-            <h2 class="section-title">Katalog Aset & Inventaris Laboratorium</h2>
-            <p class="section-subtitle">Jelajahi dan ajukan peminjaman perangkat teknologi laboratorium secara mudah dan transparan.</p>
+            <h2 class="section-title"></h2>
+            <p class="section-subtitle"></p>
         </div>
         <div>
             <a href="{{ route('equipments.create') }}" class="btn btn-primary">
-                <span>&#10133;</span> Tambah Aset Baru
+                <span>&#10133;</span>
             </a>
         </div>
     </div>
 
-    <!-- Formulir Pencarian dan Multi-Filter (Metode GET) -->
+
     <form action="{{ route('equipments.index') }}" method="GET" class="filter-form">
         <div class="filter-grid">
             <div class="form-group">
-                <label for="search">Kata Kunci Pencarian</label>
+                <label for="search"></label>
                 <input type="text"
                        name="search"
                        id="search"
@@ -31,9 +31,9 @@
             </div>
 
             <div class="form-group">
-                <label for="category_id">Kategori Perangkat</label>
+                <label for="category_id"></label>
                 <select name="category_id" id="category_id" class="form-control">
-                    <option value="">-- Semua Kategori --</option>
+                    <option value=""></option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>
                             {{ $category->name }} ({{ $category->code }})
@@ -43,17 +43,17 @@
             </div>
 
             <div class="form-group">
-                <label for="status">Status Ketersediaan</label>
+                <label for="status"></label>
                 <select name="status" id="status" class="form-control">
-                    <option value="semua" {{ request('status') == 'semua' ? 'selected' : '' }}>-- Semua Status --</option>
-                    <option value="tersedia" {{ request('status') == 'tersedia' ? 'selected' : '' }}>Tersedia</option>
-                    <option value="dipinjam" {{ request('status') == 'dipinjam' ? 'selected' : '' }}>Dipinjam</option>
-                    <option value="dalam_perbaikan" {{ request('status') == 'dalam_perbaikan' ? 'selected' : '' }}>Dalam Perbaikan</option>
+                    <option value="semua" {{ request('status') == 'semua' ? 'selected' : '' }}></option>
+                    <option value="tersedia" {{ request('status') == 'tersedia' ? 'selected' : '' }}></option>
+                    <option value="dipinjam" {{ request('status') == 'dipinjam' ? 'selected' : '' }}></option>
+                    <option value="dalam_perbaikan" {{ request('status') == 'dalam_perbaikan' ? 'selected' : '' }}></option>
                 </select>
             </div>
 
             <button type="submit" class="btn btn-primary">
-                <span>&#128269;</span> Cari & Filter
+                <span>&#128269;</span>
             </button>
 
             @if (request()->hasAny(['search', 'category_id', 'status']))
@@ -64,10 +64,10 @@
         </div>
     </form>
 
-    <!-- Ringkasan Hasil Pencarian -->
+
     @if (request('search'))
         <div class="search-summary-box">
-            Menampilkan {{ $equipments->count() }} dari {{ $equipments->total() }} hasil pencarian untuk kata kunci "<strong>{{ request('search') }}</strong>"
+            Menampilkan {{ $equipments->count() }} dari {{ $equipments->total() }} hasil pencarian untuk kata<strong>{{ request('search') }}</strong>"
         </div>
     @elseif (request('category_id') || (request('status') && request('status') !== 'semua'))
         <div class="search-summary-box">
@@ -75,7 +75,7 @@
         </div>
     @endif
 
-    <!-- Grid Kartu Aset Responsif Semantik HTML5 (<article>) -->
+
     @if ($equipments->count() > 0)
         <div class="equipment-grid">
             @foreach ($equipments as $equipment)
@@ -89,14 +89,14 @@
                             </div>
                         @endif
 
-                        <!-- Status Badge Overlay -->
+
                         <div class="card-badge-overlay">
                             @if ($equipment->status === 'tersedia')
-                                <span class="status-badge badge-tersedia">Tersedia</span>
+                                <span class="status-badge badge-tersedia"></span>
                             @elseif ($equipment->status === 'dipinjam')
-                                <span class="status-badge badge-dipinjam">Dipinjam</span>
+                                <span class="status-badge badge-dipinjam"></span>
                             @else
-                                <span class="status-badge badge-dalam_perbaikan">Dalam Perbaikan</span>
+                                <span class="status-badge badge-dalam_perbaikan"></span>
                             @endif
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                         </div>
 
                         <div class="card-price-box">
-                            <span class="card-price-label">Biaya Sewa / Hari:</span>
+                            <span class="card-price-label"></span>
                             <span class="card-price-value">Rp {{ number_format($equipment->daily_rental_fee, 0, ',', '.') }}</span>
                         </div>
 
@@ -130,15 +130,15 @@
             @endforeach
         </div>
 
-        <!-- Tautan Paginasi Eloquent Berparameter Query String -->
+
         <div class="pagination-wrapper">
             {{ $equipments->links('pagination.custom') }}
         </div>
     @else
         <div class="empty-state">
             <div style="font-size: 3rem; margin-bottom: 0.5rem;">&#128269;</div>
-            <h3>Tidak Ada Perangkat yang Ditemukan</h3>
-            <p>Tidak ada aset laboratorium yang cocok dengan kriteria pencarian dan filter Anda.</p>
+            <h3></h3>
+            <p></p>
             <a href="{{ route('equipments.index') }}" class="btn btn-secondary">
                 Lihat Seluruh Katalog
             </a>

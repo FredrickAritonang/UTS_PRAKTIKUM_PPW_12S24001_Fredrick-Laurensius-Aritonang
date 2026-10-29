@@ -10,9 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class LoanController extends Controller
 {
-    /**
-     * Display a listing of loan requests (Riwayat Peminjaman).
-     */
+    
     public function index()
     {
         $loans = LoanRequest::with(['equipment.category'])
@@ -22,9 +20,7 @@ class LoanController extends Controller
         return view('loans.index', compact('loans'));
     }
 
-    /**
-     * Show the form for creating a new loan request.
-     */
+    
     public function create(Request $request)
     {
         $equipments = Equipment::with('category')
@@ -36,9 +32,7 @@ class LoanController extends Controller
         return view('loans.create', compact('equipments', 'selectedEquipmentId'));
     }
 
-    /**
-     * Store a newly created loan request in storage with strict business validation.
-     */
+    
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -66,7 +60,7 @@ class LoanController extends Controller
         ]);
 
         $validator->after(function ($validator) use ($request) {
-            // Check availability of chosen equipment
+            
             if ($request->filled('equipment_id')) {
                 $equipment = Equipment::find($request->equipment_id);
                 if ($equipment && $equipment->status !== 'tersedia') {
@@ -78,7 +72,7 @@ class LoanController extends Controller
                 }
             }
 
-            // Check maximum duration rule (max 7 calendar days)
+            
             if ($request->filled('loan_date') && $request->filled('expected_return_date')) {
                 try {
                     $loanDate = Carbon::parse($request->loan_date);
@@ -94,7 +88,7 @@ class LoanController extends Controller
                         }
                     }
                 } catch (\Exception $e) {
-                    // Handled by date format validation
+
                 }
             }
         });
@@ -125,7 +119,7 @@ class LoanController extends Controller
             'total_estimated_fee' => $totalEstimatedFee,
         ]);
 
-        // Consistent mutation of equipment status to 'dipinjam'
+
         $equipment->update(['status' => 'dipinjam']);
 
         return redirect()->route('loans.index')->with(
@@ -134,3 +128,4 @@ class LoanController extends Controller
         );
     }
 }
+

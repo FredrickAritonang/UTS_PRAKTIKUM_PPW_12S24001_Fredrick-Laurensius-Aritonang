@@ -110,9 +110,7 @@ class EquipmentController extends Controller
         );
     }
 
-    /**
-     * Display the specified equipment details.
-     */
+    
     public function show(string $id)
     {
         $equipment = Equipment::with(['category', 'loanRequests' => function ($q) {

@@ -3,7 +3,7 @@
 @section('title', 'Pengajuan Peminjaman Perangkat')
 
 @section('content')
-<!-- Section Semantik HTML5 untuk Pengajuan Peminjaman -->
+
 <section class="form-section form-card">
     <div class="section-header">
         <div>
@@ -12,16 +12,16 @@
         </div>
         <div>
             <a href="{{ route('equipments.index') }}" class="btn btn-secondary">
-                &larr; Kembali ke Katalog
+                &larr;
             </a>
         </div>
     </div>
 
-    <!-- Formulir Peminjaman (POST dengan Proteksi CSRF) -->
+
     <form action="{{ route('loans.store') }}" method="POST">
         @csrf
 
-        <!-- Pilihan Perangkat -->
+
         <div class="form-group">
             <label for="equipment_id">Pilih Perangkat Laboratorium <span style="color: #ef4444;">*</span></label>
             <select name="equipment_id" id="equipment_id" class="form-control @error('equipment_id') is-invalid @enderror">
@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-grid-2" style="margin-top: 1rem;">
-            <!-- Nama Peminjam -->
+
             <div class="form-group">
                 <label for="borrower_name">Nama Lengkap Peminjam <span style="color: #ef4444;">*</span></label>
                 <input type="text"
@@ -56,7 +56,7 @@
                 @enderror
             </div>
 
-            <!-- NIM Mahasiswa -->
+
             <div class="form-group">
                 <label for="borrower_nim">Nomor Induk Mahasiswa (NIM) <span style="color: #ef4444;">*</span></label>
                 <input type="text"
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-        <!-- Surel Mahasiswa -->
+
         <div class="form-group" style="margin-top: 1rem;">
             <label for="borrower_email">Alamat Surel Aktif Mahasiswa <span style="color: #ef4444;">*</span></label>
             <input type="text"
@@ -88,7 +88,7 @@
         </div>
 
         <div class="form-grid-2" style="margin-top: 1rem;">
-            <!-- Tanggal Pinjam -->
+
             <div class="form-group">
                 <label for="loan_date">Tanggal Peminjaman <span style="color: #ef4444;">*</span></label>
                 <input type="date"
@@ -102,7 +102,7 @@
                 @enderror
             </div>
 
-            <!-- Rencana Tanggal Kembali -->
+
             <div class="form-group">
                 <label for="expected_return_date">Rencana Tanggal Pengembalian <span style="color: #ef4444;">*</span></label>
                 <input type="date"
@@ -117,7 +117,7 @@
             </div>
         </div>
 
-        <!-- Box Estimasi Biaya Otomatis -->
+
         <div id="fee-estimate-box" style="margin-top: 1.25rem; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-sm); padding: 0.85rem 1.15rem; display: flex; justify-content: space-between; align-items: center;">
             <div>
                 <span style="font-size: 0.825rem; color: #1e40af; font-weight: 600;">Kalkulasi Estimasi Kompensasi Peminjaman:</span>
@@ -126,7 +126,7 @@
             <div id="fee-total" style="font-size: 1.25rem; font-weight: 800; color: #1e3a8a;">Rp 0</div>
         </div>
 
-        <!-- Tujuan Peminjaman -->
+
         <div class="form-group" style="margin-top: 1rem;">
             <label for="purpose">Tujuan & Urgensi Peminjaman <span style="color: #ef4444;">*</span></label>
             <textarea name="purpose"
@@ -139,7 +139,7 @@
             @enderror
         </div>
 
-        <!-- Tombol Submit -->
+
         <div class="form-actions">
             <a href="{{ route('equipments.index') }}" class="btn btn-secondary">Batal</a>
             <button type="submit" class="btn btn-primary">

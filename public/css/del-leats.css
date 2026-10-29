@@ -10,7 +10,7 @@
     --border-color: #e2e8f0;
     --border-focus: #3b82f6;
 
-    /* Status badge colors per rubrik */
+
     --badge-avail-bg: #DCFCE7;
     --badge-avail-text: #166534;
     --badge-avail-border: #86EFAC;
@@ -47,7 +47,7 @@ body {
     flex-direction: column;
 }
 
-/* Header & Semantic Navigation */
+
 header.app-header {
     background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
     color: #ffffff;
@@ -143,7 +143,7 @@ main.app-main {
     padding: 2rem 1.5rem;
 }
 
-/* Flash Messages */
+
 .alert-container {
     margin-bottom: 1.5rem;
 }
@@ -171,7 +171,7 @@ main.app-main {
     border: 1px solid var(--badge-repair-border);
 }
 
-/* Sections */
+
 section.catalog-section,
 section.form-section,
 section.detail-section,
@@ -207,7 +207,7 @@ section.history-section {
     margin-top: 0.25rem;
 }
 
-/* Search and Filter Form */
+
 .filter-form {
     background-color: #f8fafc;
     border: 1px solid var(--border-color);
@@ -329,7 +329,7 @@ section.history-section {
     width: 100%;
 }
 
-/* Equipment Grid per Rubrik (Desk: >=3 col, Tab: 2 col, Mob: 1 col) */
+
 .equipment-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -349,7 +349,7 @@ section.history-section {
     }
 }
 
-/* Equipment Card Article */
+
 article.equipment-card {
     background: #ffffff;
     border: 1px solid var(--border-color);
@@ -451,7 +451,7 @@ article.equipment-card:hover {
     flex: 1;
 }
 
-/* Status Badges per Spesifikasi Rubrik */
+
 .status-badge {
     display: inline-flex;
     align-items: center;
@@ -482,7 +482,7 @@ article.equipment-card:hover {
     border: 1px solid var(--badge-repair-border);
 }
 
-/* Search Summary Indicator */
+
 .search-summary-box {
     background-color: #f1f5f9;
     border-left: 4px solid #2563eb;
@@ -493,7 +493,7 @@ article.equipment-card:hover {
     margin-bottom: 1rem;
 }
 
-/* Pagination container */
+
 .pagination-wrapper {
     margin-top: 2rem;
     display: flex;
@@ -533,7 +533,7 @@ article.equipment-card:hover {
     cursor: not-allowed;
 }
 
-/* Detail View Layout */
+
 .detail-grid {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
@@ -586,7 +586,7 @@ article.equipment-card:hover {
     font-weight: 500;
 }
 
-/* Table Style for Loans History */
+
 .table-responsive {
     overflow-x: auto;
     width: 100%;
@@ -616,7 +616,7 @@ article.equipment-card:hover {
     background-color: #f8fafc;
 }
 
-/* Form Styles */
+
 .form-card {
     max-width: 800px;
     margin: 0 auto;
@@ -649,7 +649,7 @@ article.equipment-card:hover {
     margin-top: 0.2rem;
 }
 
-/* Footer */
+
 footer.app-footer {
     background-color: #0f172a;
     color: #94a3b8;
@@ -683,7 +683,7 @@ footer.app-footer {
     color: #ffffff;
 }
 
-/* Empty State */
+
 .empty-state {
     text-align: center;
     padding: 3rem 1.5rem;

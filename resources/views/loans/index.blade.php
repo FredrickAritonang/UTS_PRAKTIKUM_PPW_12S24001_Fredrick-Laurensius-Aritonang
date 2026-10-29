@@ -3,7 +3,7 @@
 @section('title', 'Riwayat Peminjaman Inventaris')
 
 @section('content')
-<!-- Section Semantik HTML5 untuk Riwayat Peminjaman -->
+
 <section class="history-section">
     <div class="section-header">
         <div>
@@ -89,7 +89,7 @@
             <h3>Belum Ada Transaksi Peminjaman</h3>
             <p>Belum ada riwayat permohonan peminjaman aset laboratorium yang tercatat.</p>
             <a href="{{ route('loans.create') }}" class="btn btn-primary">
-                Ajukan Peminjaman Sekarang
+
             </a>
         </div>
     @endif

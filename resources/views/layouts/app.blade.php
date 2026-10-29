@@ -9,7 +9,7 @@
     @stack('styles')
 </head>
 <body>
-    <!-- Header Semantik HTML5 -->
+
     <header class="app-header">
         <div class="header-inner">
             <a href="{{ route('equipments.index') }}" class="brand-wrapper">
@@ -20,7 +20,7 @@
                 </div>
             </a>
 
-            <!-- Navigasi Utama Semantik HTML5 -->
+
             <nav class="main-nav" aria-label="Navigasi Utama">
                 <a href="{{ route('equipments.index') }}" class="{{ request()->routeIs('equipments.index') ? 'active' : '' }}">
                     <span>&#128187;</span> Katalog Aset
@@ -35,9 +35,9 @@
         </div>
     </header>
 
-    <!-- Main Content Semantik HTML5 -->
+
     <main class="app-main">
-        <!-- Flash Session Notifications -->
+
         <div class="alert-container">
             @if (session('success'))
                 <div class="alert alert-success" role="alert">
@@ -61,7 +61,7 @@
         @yield('content')
     </main>
 
-    <!-- Footer Semantik HTML5 -->
+
     <footer class="app-footer">
         <div class="footer-inner">
             <div>
